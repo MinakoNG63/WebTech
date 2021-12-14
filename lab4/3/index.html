@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>ลงทะเบียนร่วมงาน</h2>
+    <div>
+        <span><input type="text" placeholder="รหัสนักศึกษา" id="stuid"></span>
+        <span><input type="text" placeholder="ชื่อ" id="name"></span>
+        <span><input type="text" placeholder="นามสกุล" id="last"></span>
+        <button type="submit" onclick="func()">ลงทะเบียน</button>
+    </div>
+
+    <hr>
+
+    <table id="table0">
+        <tr>
+            <th>ลำดับที่</th>
+            <th>รหัสนักศึกษา</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+        </tr>
+    </table>
+
+    <script>
+        var count = 1
+        function func() {
+            var Stuid = document.getElementById("stuid").value;
+            var Name = document.getElementById("name").value;
+            var Last = document.getElementById("last").value;
+            var arr = [count, Stuid, Name, Last];
+            count = count + 1;
+            var table = document.getElementById('table0');
+            var row = table.insertRow(-1); //Row position 0,1,2,...,n  -1 = last
+            var cell, text, tnode;
+            for (var i = 0; i < 4; i++) {
+                // create a new column
+                cell = row.insertCell(-1);
+                text = arr[i];
+                tnode = document.createTextNode(text);
+                // add TextNode to column
+                cell.appendChild(tnode);
+
+
+            }
+            document.getElementById("stuid").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("last").value = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>PANDA FOOD</h1>
+                <p>ทุกอย่างต้องใช้ class ของ bootstrap เท่านั้น (ห้ามเขียน styles เพิ่มเอง)</p>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="card-img"
+                                src="https://st.depositphotos.com/1175884/2866/i/600/depositphotos_28664947-stock-photo-salmon-sashimi-isolated-in-white.jpg"
+                                alt="">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5>ซาชิมิแซลมอน</h5>
+                                <p>Delivery by Basket</p>
+                                <button type="button" class="btn btn-outline-warning float-right" onclick="salmon()">Add
+                                    Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="card-img"
+                                src="https://shopee.co.th/blog/wp-content/uploads/2020/05/%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B8%A7%E0%B8%B8%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99_%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%9B%E0%B8%81.jpg"
+                                alt="">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5>กุ้งอบวุ้นเส้น</h5>
+                                <p>Delivery by Basket</p>
+                                <button type="button" class="btn btn-outline-warning float-right" onclick="chimp()">Add
+                                    Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="card-img" src="https://www.siameagle.com/wp-content/uploads/2019/08/165162.jpg"
+                                alt="">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5>ชานมไข่มุก</h5>
+                                <p>Delivery by Basket</p>
+                                <button type="button" class="btn btn-outline-warning float-right" onclick="tea()">Add
+                                    Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <table class="table">
+                        <thead class="bg-primary">
+                            <tr>
+                                <th>รายการออเดอร์</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function salmon() {
+            var Tbody = document.getElementById("table-body");
+            var Tr = document.createElement("tr");
+            var Td1 = document.createElement("td");
+            var Td2 = document.createElement("td");
+
+            var node1 = document.createTextNode("ซาชิมิแซลมอน");
+            var node2 = document.createTextNode("x1");
+
+            Td1.appendChild(node1);
+            Td2.appendChild(node2);
+
+            Tr.appendChild(Td1);
+            Tr.appendChild(Td2);
+
+            Tbody.appendChild(Tr);
+        }
+
+
+        function chimp() {
+            var Tbody = document.getElementById("table-body");
+            var Tr = document.createElement("tr");
+            var Td1 = document.createElement("td");
+            var Td2 = document.createElement("td");
+
+            var node1 = document.createTextNode("กุ้งอบวุ้นเส้น");
+            var node2 = document.createTextNode("x1");
+
+            Td1.appendChild(node1);
+            Td2.appendChild(node2);
+
+            Tr.appendChild(Td1);
+            Tr.appendChild(Td2);
+
+            Tbody.appendChild(Tr);
+        }
+
+        function tea() {
+            var Tbody = document.getElementById("table-body");
+            var Tr = document.createElement("tr");
+            var Td1 = document.createElement("td");
+            var Td2 = document.createElement("td");
+
+            var node1 = document.createTextNode("ชานมไข่มุก");
+            var node2 = document.createTextNode("x1");
+
+            Td1.appendChild(node1);
+            Td2.appendChild(node2);
+
+            Tr.appendChild(Td1);
+            Tr.appendChild(Td2);
+
+            Tbody.appendChild(Tr);
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

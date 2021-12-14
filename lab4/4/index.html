@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div>
+        <span><input type="number" id="number"></span>
+        <span> : </span>
+        <button type="button" onclick="createtable()">Submit</button>
+
+    </div>
+
+    <script>
+        var count = 0;
+        function createtable() {
+            if (count != 0){
+                var table1 = document.getElementById("taby");
+            document.body.removeChild(table1);
+            }
+
+            var num1 = parseInt(document.getElementById("number").value)
+            var num = num1;
+
+            if (num>64){
+                num = 64;
+            }
+            var row = num / 8 | 0
+            var colum = num % 8
+            var table = document.createElement("table");
+            var ID = document.createAttribute("id");
+            ID.value = "taby";
+            table.setAttributeNode(ID);
+            for (var i = 1; i < row + 1; i++) { //row
+                var tr = document.createElement('tr');
+                for (var j = 1; j < 9; j++) { //colum
+                    var td = document.createElement('td');
+                    if (i % 2 == j % 2) {
+                        td.style.backgroundColor = "white";
+                        td.style.width = "50px"
+                        td.style.height = "50px"
+                    } else {
+                        td.style.backgroundColor = "black";
+                        td.style.width = "50px"
+                        td.style.height = "50px"
+                    }
+
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.body.appendChild(table);
+            var tr2 = document.createElement('tr');
+            for (var k = 1; k < colum+1; k++) { //colum
+                var td = document.createElement('td');
+                if ((row+1) % 2 == k % 2) {
+                    td.style.backgroundColor = "white";
+                    td.style.width = "50px"
+                    td.style.height = "50px"
+                } else {
+                    td.style.backgroundColor = "black";
+                    td.style.width = "50px"
+                    td.style.height = "50px"
+                }
+
+                tr2.appendChild(td);
+            }
+            table.appendChild(tr2);
+
+
+            document.body.appendChild(table);
+            count = 1;
+        }
+
+    </script>
+
+</body>
+
+</html>

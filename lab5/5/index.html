@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .card{
+            padding: 15px;
+            box-shadow: -5px 5px 20px 0px #ffb1d0;
+            background-color: rgb(255, 235, 235);
+        }
+        a{
+            color: #ffac85;
+        }
+        .bg{
+            background-color: pink;
+            color: purple;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        ::selection {
+            color: #ffffff;
+            background: hsla(342, 100%, 74%, 0.521);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="page">
+        <div class="row">
+            <div class="col-3" id=left>
+
+            </div>
+            <div class="col-9" id="right">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        let requestURL = 'tutor.json';
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                dataReportStatus(JSON.parse(request.responseText));
+            }
+        };
+        request.open("GET", requestURL, true);
+        request.send();
+
+
+        function dataReportStatus(data) {
+
+            for (var i=0; i<data.length; i++){
+                var sub = ""
+                for (var j = 0; j < data[i].subject.length; j++){
+                    sub += `<li>`+ data[i].subject[j] + `</li>`
+                }
+
+                var left = createElementFromHTML(`<div class="card">
+                                                    <a href="#name`+ i + `">` + data[i].firstname + ` ` + data[i].lastname + `</a>
+                                                </div>`)
+
+
+                var right = createElementFromHTML(`<div>
+                                                    <h3 class="bg" id="name` + i + `">` + data[i].firstname + ` ` + data[i].lastname + `</h3>
+                                                    <p>Age : ` + data[i].age + `</p>
+                                                    <p>Tel : ` + data[i].tel + `</p>
+                                                    <p>Subject :</p>
+                                                    <ul>`
+                                                        + sub +
+                                                    `</ul>
+                                                </div>`)
+            var pagel = document.getElementById("left");
+            pagel.appendChild(left);
+            var pager = document.getElementById("right");
+            pager.appendChild(right);
+            }
+
+
+        }
+
+        function createElementFromHTML(htmlString) {
+            var div = document.createElement('div');
+            div.innerHTML = htmlString.trim();
+
+            // Change this to div.childNodes to support multiple top-level nodes
+            return div.firstChild;
+        }
+    </script>
+
+</body>
+
+</html>

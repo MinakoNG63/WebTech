@@ -1,0 +1,337 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>What's your name?</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-primary" onclick="Name()">reply</button>
+            </div>
+            <div class="col-10" id="add-name">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <br>
+                <h1>How old are you?</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-primary" onclick="Age()">reply</button>
+            </div>
+            <div class="col-10" id="add-age">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <br>
+                <h1>What's your favourite hobby?</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-primary" onclick="Hobby()">reply</button>
+            </div>
+            <div class="col-10" id="add-hobby">
+
+            </div>
+        </div>
+        <br>
+
+        <p id="addy1"></p>
+        <p id="addy2"></p>
+
+    </div>
+
+
+    <script>
+
+        var num_name = 0;
+        var num_age = 0;
+        var num_hobby = 0;
+        function Name() {
+            if (num_name == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_name = 0;
+            } else if (num_age == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_age = 0;
+            } else if (num_hobby == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_hobby = 0;
+            }
+
+
+            var box = document.createElement("input");
+            var at_box = document.createAttribute("id");
+
+            at_box.value = "namemy";
+            box.setAttributeNode(at_box);
+
+            var class_box = document.createAttribute("class");
+            class_box.value = "form-control";
+            box.setAttributeNode(class_box);
+            var pla_box = document.createAttribute("placeholder");
+            pla_box.value = "What's your name?";
+            box.setAttributeNode(pla_box);
+
+
+            var butt = document.createElement("button");
+            butt.innerHTML = "send reply message";
+            var func_but = document.createAttribute("onclick");
+            var id_but = document.createAttribute("id");
+            id_but.value = "butty"
+            func_but.value = "answer1()";
+            butt.setAttributeNode(func_but);
+            butt.setAttributeNode(id_but);
+
+            var Addy1 = document.getElementById("addy1");
+            var Addy2 = document.getElementById("addy2");
+
+            Addy1.appendChild(box);
+            Addy2.appendChild(butt);
+
+            var boot = document.createAttribute("class");
+
+            boot.value = "btn btn-warning";
+            butt.setAttributeNode(boot);
+            num_name = 1;
+
+        }
+
+        function answer1() {
+            var last_1 = document.getElementById("add-name");
+            var get_name = document.getElementById("namemy").value;
+            var get_p_1 = document.createElement("p");
+            var node_p_1 = document.createTextNode(get_name);
+            get_p_1.appendChild(node_p_1);
+            last_1.appendChild(get_p_1);
+
+            var delly1 = document.getElementById("addy1");
+            var rebox = document.getElementById("namemy");
+            delly1.removeChild(rebox);
+
+            var delly2 = document.getElementById("addy2");
+            var rebut = document.getElementById("butty");
+            delly2.removeChild(rebut);
+            num_name = 0;
+        }
+
+        // 22222
+        function Age() {
+            if (num_name == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_name = 0;
+            } else if (num_age == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_age = 0;
+            } else if (num_hobby == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_hobby = 0;
+            }
+            var box = document.createElement("input");
+            var at_box = document.createAttribute("id");
+            at_box.value = "namemy";
+            box.setAttributeNode(at_box);
+
+            var class_box = document.createAttribute("class");
+            class_box.value = "form-control";
+            box.setAttributeNode(class_box);
+            var pla_box = document.createAttribute("placeholder");
+            pla_box.value = "How old are you?";
+            box.setAttributeNode(pla_box);
+
+            var butt = document.createElement("button");
+            butt.innerHTML = "send reply message";
+            var func_but = document.createAttribute("onclick");
+            var id_but = document.createAttribute("id");
+            id_but.value = "butty"
+            func_but.value = "answer2()";
+            butt.setAttributeNode(func_but);
+            butt.setAttributeNode(id_but);
+
+            var Addy1 = document.getElementById("addy1");
+            var Addy2 = document.getElementById("addy2");
+
+            Addy1.appendChild(box);
+            Addy2.appendChild(butt);
+
+            var boot = document.createAttribute("class");
+
+            boot.value = "btn btn-warning";
+            butt.setAttributeNode(boot);
+            num_age = 1;
+
+        }
+
+        function answer2() {
+            var last_1 = document.getElementById("add-age");
+            var get_name = document.getElementById("namemy").value;
+            var get_p_1 = document.createElement("p");
+            var node_p_1 = document.createTextNode(get_name);
+            get_p_1.appendChild(node_p_1);
+            last_1.appendChild(get_p_1);
+
+            var delly1 = document.getElementById("addy1");
+            var rebox = document.getElementById("namemy");
+            delly1.removeChild(rebox);
+
+            var delly2 = document.getElementById("addy2");
+            var rebut = document.getElementById("butty");
+            delly2.removeChild(rebut);
+            num_age = 0;
+        }
+
+        // 3333333
+        function Hobby() {
+            if (num_name == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_name = 0;
+            } else if (num_age == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_age = 0;
+            } else if (num_hobby == 1) {
+                var delly1 = document.getElementById("addy1");
+                var rebox = document.getElementById("namemy");
+                delly1.removeChild(rebox);
+
+                var delly2 = document.getElementById("addy2");
+                var rebut = document.getElementById("butty");
+                delly2.removeChild(rebut);
+                num_hobby = 0;
+            }
+            var box = document.createElement("input");
+            var at_box = document.createAttribute("id");
+            at_box.value = "namemy";
+            box.setAttributeNode(at_box);
+
+            var class_box = document.createAttribute("class");
+            class_box.value = "form-control";
+            box.setAttributeNode(class_box);
+            var pla_box = document.createAttribute("placeholder");
+            pla_box.value = "What's your favourite hobby?";
+            box.setAttributeNode(pla_box);
+
+            var butt = document.createElement("button");
+            butt.innerHTML = "send reply message";
+            var func_but = document.createAttribute("onclick");
+            var id_but = document.createAttribute("id");
+            id_but.value = "butty"
+            func_but.value = "answer3()";
+            butt.setAttributeNode(func_but);
+            butt.setAttributeNode(id_but);
+
+            var Addy1 = document.getElementById("addy1");
+            var Addy2 = document.getElementById("addy2");
+
+            Addy1.appendChild(box);
+            Addy2.appendChild(butt);
+
+            var boot = document.createAttribute("class");
+
+            boot.value = "btn btn-warning";
+            butt.setAttributeNode(boot);
+            num_hobby = 1;
+
+        }
+
+        function answer3() {
+            var last_1 = document.getElementById("add-hobby");
+            var get_name = document.getElementById("namemy").value;
+            var get_p_1 = document.createElement("p");
+            var node_p_1 = document.createTextNode(get_name);
+            get_p_1.appendChild(node_p_1);
+            last_1.appendChild(get_p_1);
+
+            var delly1 = document.getElementById("addy1");
+            var rebox = document.getElementById("namemy");
+            delly1.removeChild(rebox);
+
+            var delly2 = document.getElementById("addy2");
+            var rebut = document.getElementById("butty");
+            delly2.removeChild(rebut);
+            num_hobby = 0;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

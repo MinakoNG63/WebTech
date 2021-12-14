@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let requestURL = 'person.json';
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                dataReportStatus(JSON.parse(request.responseText));
+            } };
+        request.open("GET", requestURL, true);
+        request.send();
+
+        function dataReportStatus(data) {
+            for (var i = 0; i < data.length; i++){
+                document.write(data[i].firstName + ` `);
+                document.write(data[i].lastName + `, `);
+                document.write(data[i].gender.type + ` `);
+                document.write(data[i].age + ` years old.<br>`);
+                document.write(data[i].address.streetAddress + ` `);
+                document.write(data[i].address.city + ` `);
+                document.write(data[i].address.state + `<br>`);
+                document.write(data[i].address.postalCode + `<br>`);
+                for (var j = 0; data[i].phoneNumber.length; j++){
+                    document.write(data[i].phoneNumber[j].type + ` : `);
+                    document.write(data[i].phoneNumber[j].number + `<br>`);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
