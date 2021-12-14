@@ -1,0 +1,36 @@
+body{
+    font-family: 'Prompt', sans-serif;
+    color: gray;
+}
+
+.container{
+    box-sizing: border-box;
+    max-width: 600px;
+    width: 50%; background-color:rgb(221, 221, 221);
+    text-align: right;
+
+}
+
+.content{
+    box-sizing: border-box;
+}
+
+#J{
+    width: 60%; background-color:rgb(227, 159, 236);
+}
+
+#D{
+    width: 90%; background-color:rgb(145, 196, 255);
+}
+
+#B{
+    width: 50%; background-color:rgb(136, 255, 189);
+}
+
+#R{
+    width: 80%; background-color:rgb(255, 253, 164);
+}
+
+#T{
+    width: 75%; background-color:rgb(255, 197, 143);
+}

@@ -1,0 +1,13 @@
+body{
+    font-family: 'Prompt', sans-serif;
+}
+
+table{
+    border-spacing: 0px;
+}
+
+td, th{
+    border-bottom: 1px solid black;
+
+  }
+

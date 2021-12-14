@@ -1,0 +1,58 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #fffff0;
+}
+
+
+.box{
+    background-color: rgb(226, 226, 226);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 18px;
+    max-width: 900px;
+}
+
+.left{
+    background-color: rgb(184, 184, 184);
+    border-radius: 18px 0px 0px 18px;
+    margin: 5px;
+    margin-right: -5px;
+}
+
+button{
+    width: 100%;
+}
+
+.card {
+    background-image: url("https://i.pinimg.com/736x/c9/ac/97/c9ac979254c917878a74c05d2828f096.jpg");
+    background-position:right;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 200px;
+    width: 90%;
+    padding: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+
+
+}
+
+#flexy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#four{
+    text-align: right;
+    color: ivory;
+    text-shadow: 1px 1px #000000;
+}
+
+.card{
+    color: rgb(83, 62, 54);
+    display: flex;
+    text-shadow: 1px 1px #ffffff;
+}
